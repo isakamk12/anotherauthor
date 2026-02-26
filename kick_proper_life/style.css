@@ -1,0 +1,330 @@
+:root {
+    /* ちゃんとした人生 : Urban Rain & Retro Cafe Theme */
+    --rain-bg: #1A1C29;
+    /* Deep Navy Blue */
+    --card-bg: rgba(44, 48, 62, 0.65);
+    /* Rain-slicked Asphalt */
+    --border: rgba(138, 214, 164, 0.2);
+    --ink: #EFEFEF;
+    /* Off-white */
+    --ink-dim: rgba(239, 239, 239, 0.6);
+
+    --soda-green: #8AD6A4;
+    /* Cream Soda */
+    --neon-yellow: #FFF9DD;
+    /* Warm Lights */
+    --classic-blue: #152042;
+    /* Naho's Car */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: var(--rain-bg);
+    color: var(--ink);
+    line-height: 1.9;
+    overflow-x: hidden;
+    position: relative;
+    /* Static noise / Rain grain effect */
+    background-image:
+        radial-gradient(circle at top right, rgba(21, 32, 66, 0.8), transparent 60%),
+        radial-gradient(circle at bottom left, rgba(138, 214, 164, 0.05), transparent 50%);
+}
+
+#mouse-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999999;
+}
+
+h1,
+h2,
+h3,
+.serif {
+    font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+}
+
+/* Header */
+header {
+    background: transparent;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--ink-dim);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 249, 221, 0.6);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--soda-green), transparent);
+}
+
+.glow-text {
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.4;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.catchcopy {
+    font-size: 1.1rem;
+    color: var(--neon-yellow);
+    letter-spacing: 3px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 30px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--soda-green);
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/* Intro / Synopsis Box */
+.glass-box {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 50px;
+    border-radius: 2px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    margin-bottom: 100px;
+}
+
+.glass-box p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+/* Character Split Layout */
+.char-split {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.char-card {
+    flex: 1;
+    background: transparent;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    transition: transform 0.4s;
+}
+
+.char-card:hover {
+    transform: translateY(-5px);
+}
+
+.char-card h3 {
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-bottom: 5px;
+}
+
+.char-card .role {
+    font-family: 'Share Tech Mono', sans-serif;
+    color: var(--neon-yellow);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.char-card p {
+    font-size: 0.95rem;
+    color: var(--ink-dim);
+}
+
+/* Motifs Grid */
+.motifs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.motif-item {
+    aspect-ratio: 1;
+    background: var(--card-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.motif-item:hover {
+    background: var(--classic-blue);
+    border-color: var(--soda-green);
+    box-shadow: 0 0 30px rgba(138, 214, 164, 0.2);
+    transform: scale(1.05);
+}
+
+.motif-item span {
+    font-size: 1.1rem;
+    color: var(--ink);
+    letter-spacing: 2px;
+}
+
+/* Episodes List */
+.episodes-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.arc-title {
+    font-size: 1.2rem;
+    color: var(--soda-green);
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.ep-link {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: padding-left 0.3s, color 0.3s;
+}
+
+.ep-link:hover {
+    padding-left: 20px;
+    color: var(--neon-yellow);
+}
+
+.ep-date {
+    color: var(--ink-dim);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+}
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--ink-dim);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-top: 50px;
+}
+
+@media(max-width: 768px) {
+    .char-split {
+        flex-direction: column;
+    }
+
+    .motifs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glow-text {
+        font-size: 2.2rem;
+    }
+
+    .hero {
+        padding-left: 5%;
+    }
+}
+
+/* Touch active variants for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .motif-item:active {
+        transform: scale(1.05);
+        background: var(--classic-blue);
+        border-color: var(--soda-green);
+        box-shadow: 0 0 30px rgba(138, 214, 164, 0.2);
+    }
+
+    .ep-link:active {
+        padding-left: 20px;
+        color: var(--neon-yellow);
+    }
+
+    .char-card:active {
+        transform: translateY(-5px);
+    }
+
+    .nav-links a:active {
+        color: var(--neon-yellow);
+        text-shadow: 0 0 10px rgba(255, 249, 221, 0.6);
+    }
+}
+
+/* ===== Reveal Animation ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

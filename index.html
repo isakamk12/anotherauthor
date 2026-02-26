@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novels & Records - Author's Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Courier+Prime:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mouse-trail.css">
+</head>
+
+<body>
+
+    <header id="masthead">
+        <div class="header-inner">
+            <div class="brand-bar">Author's Works &mdash; Master Portal</div>
+            <a href="../isakatarminalsite/index.html" class="portal-link">作者ターミナルへ戻る</a>
+        </div>
+    </header>
+
+    <!-- 新聞題字エリア -->
+    <section class="newspaper-masthead">
+        <p class="masthead-date" id="current-date"></p>
+        <h1 class="masthead-title">Novels &<br>Records</h1>
+        <p class="masthead-subtitle">The Collection Vault</p>
+        <div class="masthead-rule"><span class="masthead-rule-icon">◆</span></div>
+    </section>
+
+    <main class="newspaper-body">
+
+        <!-- リード -->
+        <hr class="column-rule">
+        <div class="lead-block reveal">
+            <p>
+                ここに記録されるのは、各方面に散らばった数々の物語のアーカイブである。<br><br>
+                疾走するアスファルトの熱、天界における無限の書類仕事、あるいは都会の雨音と純喫茶の余白。<br>
+                全く異なるジャンル、全く異なる世界観を持つ<strong>「3つの作品」</strong>へのアクセスポイントとして、このポータルは機能する。
+            </p>
+        </div>
+
+        <!-- 収録作品（広告欄風グリッド） -->
+        <hr class="column-rule-double">
+        <h2 class="headline reveal"><span class="headline-sm">INDEX</span> 収録作品一覧</h2>
+        <div class="ad-grid reveal">
+            <!-- Project 1 -->
+            <a href="200miles_afterimage/index.html" class="ad-cell">
+                <div class="ad-cell-num">01</div>
+                <div class="ad-cell-title">200マイルの残像</div>
+                <div class="ad-cell-desc">90年代首都高を舞台にした、車と家族のヒューマンドラマ。ネオンと疾走感の夜のハイウェイ。</div>
+            </a>
+            <!-- Project 2 -->
+            <a href="alice_reincarnation_agency/index.html" class="ad-cell">
+                <div class="ad-cell-num">02</div>
+                <div class="ad-cell-title">天界転生管理局<br>地球課の天使アリス</div>
+                <div class="ad-cell-desc">チートスキルに頭を抱える天使！「神聖×ブラック職場」のドタバタお仕事ファンタジー。</div>
+            </a>
+            <!-- Project 3 -->
+            <a href="kick_proper_life/index.html" class="ad-cell">
+                <div class="ad-cell-num">03</div>
+                <div class="ad-cell-title">ちゃんとした人生を蹴り飛ばしたら、やっとエンジンがかかる</div>
+                <div class="ad-cell-desc">雨の都会、クラシックカー、レトロなカフェ。二人の社会人女性の出会いと「余白」のエモGL。</div>
+            </a>
+        </div>
+
+    </main>
+
+    <footer>&copy; 2026 Author's Novels & Records Portal</footer>
+
+    <script>
+        (function () {
+            // Set current date
+            const dateEl = document.getElementById('current-date');
+            if (dateEl) {
+                const now = new Date();
+                dateEl.textContent = `${now.getFullYear()} . ${String(now.getMonth() + 1).padStart(2, '0')} . ${String(now.getDate()).padStart(2, '0')} // ARCHIVE RECORD`;
+            }
+
+            // Reveal Animation
+            function runReveal() {
+                document.querySelectorAll('.reveal').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
+                });
+            }
+            window.addEventListener('scroll', runReveal);
+            runReveal();
+        })();
+    </script>
+    <script src="mouse-trail.js"></script>
+</body>
+
+</html>

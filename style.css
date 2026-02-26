@@ -1,0 +1,307 @@
+:root {
+    --parchment: #f4f0e8;
+    --parchment-dark: #e8e0d0;
+    --ink: #1a1612;
+    --ink-light: #3d362c;
+    --ink-dim: #7a7060;
+    --red-accent: #8b2020;
+    --rule: #1a1612;
+    --rule-thin: rgba(26, 22, 18, .2);
+    --rule-thick: rgba(26, 22, 18, .65);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Serif JP', 'Georgia', serif;
+    background: var(--parchment);
+    color: var(--ink);
+    overflow-x: hidden;
+}
+
+/* 微かな紙テクスチャ */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 28px, var(--rule-thin) 28px, var(--rule-thin) 29px);
+    opacity: .35;
+}
+
+/* ===== 固定ヘッダー ===== */
+#masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 48px;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-bar {
+    font-family: 'Courier Prime', monospace;
+    color: var(--parchment);
+    font-size: .72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.portal-link {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.8rem;
+    color: var(--parchment);
+    text-decoration: none;
+    border: 1px solid rgba(244, 240, 232, 0.5);
+    /* Semi-transparent parchment */
+    padding: 4px 12px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.portal-link:hover {
+    background: var(--parchment);
+    color: var(--ink);
+}
+
+@media (max-width:640px) {
+    .header-inner {
+        padding: 0 16px;
+    }
+}
+
+/* ===== マストヘッド（新聞題字） ===== */
+.newspaper-masthead {
+    position: relative;
+    z-index: 1;
+    padding: 100px 40px 48px;
+    text-align: center;
+    border-bottom: 4px double var(--rule);
+}
+
+.masthead-date {
+    font-family: 'Courier Prime', monospace;
+    font-size: .72rem;
+    color: var(--ink-dim);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.masthead-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.masthead-subtitle {
+    font-family: 'Courier Prime', monospace;
+    font-size: .85rem;
+    color: var(--ink-dim);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.masthead-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.masthead-rule::before,
+.masthead-rule::after {
+    content: '';
+    width: 120px;
+    height: 1px;
+    background: var(--rule);
+}
+
+.masthead-rule-icon {
+    font-size: .6rem;
+    color: var(--ink-dim);
+}
+
+/* ===== コンテンツ ===== */
+.newspaper-body {
+    position: relative;
+    z-index: 1;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 40px 100px;
+}
+
+@media (max-width:640px) {
+    .newspaper-body {
+        padding: 32px 18px 60px;
+    }
+}
+
+/* 見出し飾り罫 */
+.column-rule {
+    border: none;
+    border-top: 1px solid var(--rule-thick);
+    margin: 48px 0 12px;
+}
+
+.column-rule-double {
+    border: none;
+    border-top: 3px double var(--rule);
+    margin: 56px 0 16px;
+}
+
+/* セクション見出し */
+.headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.headline::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule-thin);
+}
+
+.headline-sm {
+    font-family: 'Courier Prime', monospace;
+    font-size: .65rem;
+    color: var(--red-accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* リード文（左ボーダー） */
+.lead-block {
+    border-left: 3px solid var(--ink);
+    padding: 24px 32px;
+    margin-bottom: 48px;
+    background: rgba(26, 22, 18, .03);
+}
+
+.lead-block p {
+    font-size: 1.06rem;
+    line-height: 2.0;
+}
+
+.lead-block strong {
+    color: var(--red-accent);
+    font-weight: 700;
+}
+
+@media (max-width:640px) {
+    .lead-block {
+        padding: 18px 18px;
+    }
+}
+
+/* 機能カードグリッド（新聞の広告欄風） */
+.ad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    border: 2px solid var(--rule);
+    margin-bottom: 56px;
+}
+
+.ad-cell {
+    padding: 24px 20px;
+    border: 1px solid var(--rule-thin);
+    transition: background .3s;
+    text-decoration: none;
+    display: block;
+    color: var(--ink);
+}
+
+.ad-cell:hover {
+    background: rgba(26, 22, 18, .05);
+}
+
+.ad-cell-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--red-accent);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.ad-cell-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+.ad-cell-desc {
+    font-size: .85rem;
+    color: var(--ink-dim);
+    line-height: 1.6;
+}
+
+@media (max-width:700px) {
+    .ad-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== フッター ===== */
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 32px 20px;
+    border-top: 3px double var(--rule);
+    font-family: 'Courier Prime', monospace;
+    font-size: .68rem;
+    letter-spacing: 3px;
+    color: var(--ink-dim);
+}
+
+/* ===== Reveal ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
