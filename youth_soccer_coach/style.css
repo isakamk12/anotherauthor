@@ -1,0 +1,432 @@
+:root {
+    /* Soccer Field Colors */
+    --turf-green: #2ecc71;
+    --turf-dark: #27ae60;
+    --field-lines: #ffffff;
+    --sky-blue: #3498db;
+
+    /* UI Colors */
+    --bg-light: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #2c3e50;
+    --text-dim: #7f8c8d;
+    --accent-yellow: #f1c40f;
+    --whistle-silver: #bdc3c7;
+
+    --shadow: 0 8px 30px rgba(44, 62, 80, 0.08);
+    --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+.site-header {
+    background: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--turf-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.return-btn {
+    text-decoration: none;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    border: 1px solid var(--whistle-silver);
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.return-btn:hover {
+    background: var(--turf-green);
+    color: white;
+    border-color: var(--turf-green);
+}
+
+/* Hero Section (Field Aesthetic) */
+.hero-section {
+    margin-top: 60px;
+    background: linear-gradient(135deg, var(--turf-green) 0%, var(--turf-dark) 100%);
+    position: relative;
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.field-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 2px, transparent 2px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Center circle simulation */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-tag {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    color: var(--accent-yellow);
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-title .highlight {
+    color: var(--accent-yellow);
+    display: inline-block;
+    transform: rotate(-2deg);
+}
+
+.hero-author {
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    backdrop-filter: blur(4px);
+}
+
+.status-badge {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transform: rotate(15deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: rotate(15deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(15deg) scale(1.05);
+    }
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: var(--turf-dark);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 3px solid var(--whistle-silver);
+    padding-bottom: 8px;
+}
+
+.section-title span {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dim);
+    font-weight: 700;
+}
+
+/* Content Cards */
+.content-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    margin-bottom: 60px;
+    border-top: 6px solid var(--turf-green);
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.meta-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--whistle-silver);
+    display: flex;
+    gap: 20px;
+    font-weight: 700;
+    color: var(--turf-dark);
+    font-size: 0.9rem;
+}
+
+/* Roster Grid */
+#roster {
+    margin-bottom: 60px;
+}
+
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.member-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--turf-green);
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.member-role {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.bg-green {
+    background-color: var(--turf-green);
+}
+
+.bg-blue {
+    background-color: var(--sky-blue);
+}
+
+.bg-gold {
+    background-color: var(--accent-yellow);
+    color: var(--text-main);
+}
+
+.member-name {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.member-desc {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+/* Episodes */
+.episode-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ep-link {
+    display: flex;
+    align-items: center;
+    background: var(--bg-light);
+    padding: 16px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.ep-link:hover {
+    background: #e8f5e9;
+    transform: translateX(4px);
+}
+
+.ep-num {
+    font-family: 'Oswald', sans-serif;
+    color: var(--turf-dark);
+    width: 80px;
+    flex-shrink: 0;
+}
+
+.ep-title {
+    flex-grow: 1;
+}
+
+.ep-arrow {
+    color: var(--whistle-silver);
+    font-weight: bold;
+}
+
+.ep-link.locked {
+    opacity: 0.6;
+    background: transparent;
+    border: 1px solid var(--whistle-silver);
+}
+
+.ep-link.locked:hover {
+    transform: none;
+    background: var(--bg-light);
+}
+
+/* Action Area */
+.action-area {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.main-btn {
+    display: inline-block;
+    background: var(--turf-dark);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--text-main);
+    color: white;
+    font-size: 0.85rem;
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile & Touch */
+@media (max-width: 600px) {
+    .content-card {
+        padding: 24px;
+    }
+
+    .hero-section {
+        padding: 80px 20px;
+    }
+
+    .status-badge {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        margin-top: 16px;
+    }
+
+    .ep-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .ep-arrow {
+        display: none;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+    .member-card:active,
+    .ep-link:active,
+    .main-btn:active {
+        transform: scale(0.98);
+        background-color: var(--bg-light);
+    }
+}

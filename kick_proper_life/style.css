@@ -81,8 +81,25 @@ header {
 }
 
 .nav-links a:hover {
-    color: var(--neon-yellow);
-    text-shadow: 0 0 10px rgba(255, 249, 221, 0.6);
+    color: var(--accent-yellow);
+    text-shadow: 0 0 10px rgba(234, 219, 143, 0.5);
+}
+
+.nav-return {
+    margin-right: auto;
+    color: var(--soda-green) !important;
+    border: 1px solid var(--soda-green);
+    padding: 2px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem !important;
+    transition: all 0.3s !important;
+}
+
+.nav-return:hover {
+    background: var(--soda-green);
+    color: var(--ink) !important;
+    box-shadow: 0 0 10px rgba(138, 214, 164, 0.4);
+    text-shadow: none !important;
 }
 
 /* Hero Section */

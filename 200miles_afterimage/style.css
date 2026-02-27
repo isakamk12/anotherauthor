@@ -84,24 +84,48 @@ header {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
+/* Navigation */
 .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 30px;
+    background: rgba(14, 21, 58, 0.85);
+    /* Dark blue tinted glass */
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: 1px solid rgba(8, 217, 214, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    align-items: center;
 }
 
 .nav-links a {
     color: var(--ink);
     text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 2px;
     font-size: 0.9rem;
-    text-transform: uppercase;
+    font-weight: 700;
     transition: color 0.3s, text-shadow 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-links a:hover {
     color: var(--secondary);
     text-shadow: 0 0 8px var(--secondary-glow);
+}
+
+.nav-return {
+    margin-right: auto;
+    color: var(--neon-cyan) !important;
+    border: 1px solid var(--neon-cyan);
+    padding: 4px 12px;
+    border-radius: 12px;
+    transition: all 0.3s !important;
+}
+
+.nav-return:hover {
+    background: var(--neon-cyan);
+    color: var(--bg) !important;
+    box-shadow: 0 0 10px rgba(8, 217, 214, 0.5);
 }
 
 /* ===== Hero Section ===== */
