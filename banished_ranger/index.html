@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国に選ばれた勇者の俺、パーティーにいらないと思って追放した万能士は、実は超優秀なチートスキル持ちでした</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@500;800;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="rpg-header">
+        <div class="header-inner">
+            <a href="../index.html" class="nav-return">◀ ポータルへ戻る</a>
+            <div class="header-brand">BANISHED RANGER</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+        <div class="diagonal-split">
+            <!-- Left side: Hero Party -->
+            <div class="split-side  hero-party">
+                <div class="character-silhouette rein"></div>
+                <div class="character-silhouette sandor"></div>
+                <div class="side-label">【勇者パーティー】<br>俺の理想のハーレムはどこへ！？</div>
+            </div>
+
+            <!-- Right side: Alter Party (Heritage) -->
+            <div class="split-side alter-party">
+                <div class="character-silhouette alter"></div>
+                <div class="character-silhouette kana"></div>
+                <div class="character-silhouette maria"></div>
+                <div class="side-label">【星界の継承者】<br>気付いたら美女だらけなんだが…</div>
+            </div>
+
+            <!-- VS Graphic -->
+            <div class="vs-badge">VS?</div>
+        </div>
+
+        <div class="title-container">
+            <h1 class="logo-text">
+                <span class="small-text">国に選ばれた勇者の俺、パーティーにいらないと思って</span>
+                <span class="main-text">追放した万能士《レンジャー》は、<br>実は超優秀なチートスキル持ちでした</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Synopsis (Quest Window format) -->
+    <section class="section-container reveal">
+        <div class="rpg-window quest-window">
+            <div class="window-header">▶ QUEST: あらすじを確認する</div>
+            <div class="window-content">
+                <p>
+                    エリラント王国に選ばれた勇者レインは、Sランクの美女を集めて夢の「ハーレムパーティー」を作るため、幼馴染で便利だが戦闘力に欠けるCランクの万能士アルターを追放する。<br><br>
+                    しかし、レインが筋肉好きの盾士サンドルらを渋々仲間に加えている間に、アルターはSランクの弓士カナや魅力的な美女たちを次々と仲間にし、「星界の継承者（ヘリテージ）」という新パーティーをあっさりと結成してしまう。<br>
+                    さらに、アルターの《格納》スキルはレベルアップにより、敵のモンスターや技を吸収・放出できる規格外のチート能力へと進化していた。<br><br>
+                    「なんで俺じゃなくてあいつがハーレムを作ってるんだ！」と嘆くレイン。<br>
+                    だが二つのパーティーは敵対することなく、共同クエストや温泉旅行などを通じて賑やかな関係を築いていく。空回り気味な勇者と、無自覚チートな万能士が織りなす、ドタバタ異世界ファンタジーコメディ！
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters (Status Screen format) -->
+    <section class="section-container reveal">
+        <h2 class="section-title">CHARACTER STATUS</h2>
+
+        <div class="party-wrapper">
+            <h3 class="party-name hero-team">▼ 勇者パーティー</h3>
+            <div class="status-grid">
+                <!-- Rein -->
+                <div class="status-card">
+                    <div class="char-header">
+                        <span class="char-name">レイン・ナイトレット</span>
+                        <span class="char-class">▶ 勇者</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">天賜</span> <span class="stat-val s-rank">【S】剣聖</span>
+                    </div>
+                    <p class="char-desc">主人公。お調子者でスケベ、美女だらけのハーレムを作るのが夢だが、根は仲間思いで優しい。</p>
+                </div>
+
+                <!-- Firia -->
+                <div class="status-card">
+                    <div class="char-header">
+                        <span class="char-name">フィリア・スーベル</span>
+                        <span class="char-class">▶ 回復士</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">天賜</span> <span class="stat-val s-rank">【S】回復聖</span>
+                    </div>
+                    <p class="char-desc">銀髪ボブカットの美女。実はおぞましいほどの筋肉フェチ。</p>
+                </div>
+
+                <!-- Elsene -->
+                <div class="status-card">
+                    <div class="char-header">
+                        <span class="char-name">エルセーヌ・マーガレット</span>
+                        <span class="char-class">▶ 魔導士</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">天賜</span> <span class="stat-val s-rank">【S】魔法聖</span>
+                    </div>
+                    <p class="char-desc">黒髪スレンダーな美女。密かに追放されたアルターに好意を寄せている。</p>
+                </div>
+
+                <!-- Sandor -->
+                <div class="status-card">
+                    <div class="char-header">
+                        <span class="char-name">サンドル・ケーロン</span>
+                        <span class="char-class">▶ 盾士</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">天賜</span> <span class="stat-val a-rank">【A】火炎耐久</span>
+                    </div>
+                    <p class="char-desc">マッチョな男。アルターの代わりに加入した盾役。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="party-wrapper">
+            <h3 class="party-name alter-team">▼ 星界の継承者（ヘリテージ）</h3>
+            <div class="status-grid">
+                <!-- Alter -->
+                <div class="status-card alter-card">
+                    <div class="char-header">
+                        <span class="char-name">アルター・モーラン</span>
+                        <span class="char-class">▶ 万能士</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">天賜</span> <span class="stat-val cheat-rank">【C→?】格納（進化）</span>
+                    </div>
+                    <p class="char-desc">「荷物持ちしかできない」と追放されたが、《格納》が進化しモンスター吸収・技反射までできる超チート能力を開花させた。</p>
+                </div>
+
+                <!-- Kana -->
+                <div class="status-card">
+                    <div class="char-header">
+                        <span class="char-name">カナ・ニホースト</span>
+                        <span class="char-class">▶ 弓士</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">天賜</span> <span class="stat-val s-rank">【S】弓聖</span>
+                    </div>
+                    <p class="char-desc">金髪ポニーテールの美女。温泉街ニホースト出身。アルターのパーティー第一号。</p>
+                </div>
+
+                <!-- Maria -->
+                <div class="status-card">
+                    <div class="char-header">
+                        <span class="char-name">マリア・ツーベル</span>
+                        <span class="char-class">▶ 盗賊</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stat-label">天賜</span> <span class="stat-val b-rank">【B】泥棒</span>
+                    </div>
+                    <p class="char-desc">黒髪ロングの爆乳お姉さん。能力を使うと服が破れて全裸になってしまうという困った体質。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Episodes -->
+    <section class="section-container reveal">
+        <div class="rpg-window">
+            <div class="window-header">▶ MENU: エピソード選択</div>
+            <div class="menu-list">
+                <a href="#" class="menu-item"><span class="cursor">▶</span> 01. 追放そして…</a>
+                <a href="#" class="menu-item"><span class="cursor">▶</span> 02. 新しい仲間？</a>
+                <a href="#" class="menu-item"><span class="cursor">▶</span> 03. 共同クエスト発生</a>
+                <a href="#" class="menu-item"><span class="cursor">▶</span> 04. 温泉旅行へ行こう！</a>
+                <a href="#" class="menu-item" style="opacity: 0.5;"><span class="cursor">▶</span> TO BE CONTINUED
+                    (連載中)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pixel-footer">
+        &copy; 2026 追放レンジャー / Author: @h-ar-u
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            // Reveal Animation
+            function runReveal() {
+                document.querySelectorAll('.reveal').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', runReveal);
+            runReveal(); // trigger on load
+        })();
+    </script>
+</body>
+
+</html>

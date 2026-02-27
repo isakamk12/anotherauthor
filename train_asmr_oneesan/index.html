@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電車でいつも隣の席のお姉さんがイタズラしてくる【ASMR】</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="train-header">
+        <a href="../index.html" class="nav-return">◀ ポータルへ</a>
+    </header>
+
+    <!-- Scroll Container -->
+    <div class="scroll-container">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="title">電車でいつも隣の席のお姉さんが<br>イタズラしてくる<span class="asmr-tag">【ASMR】</span></h1>
+            <p class="scroll-prompt">Scroll Down<br>▼</p>
+        </section>
+
+        <!-- Whisper Flow (ASMR text fading in on scroll) -->
+        <div class="whisper-flow">
+
+            <div class="whisper-box left-align reveal-text">
+                <p class="voice">「ん……おはよう……少年……」</p>
+                <span class="context">── 4月。春の匂いがする朝の電車。</span>
+            </div>
+
+            <div class="whisper-box right-align reveal-text" style="margin-top: 30vh;">
+                <p class="voice">「ふふっ、耳、赤くなってるよ？」</p>
+                <span class="context">── 距離が近い。吐息が耳元を掠める。</span>
+            </div>
+
+            <div class="whisper-box center-align synopsis-box reveal-text" style="margin-top: 40vh;">
+                <h2 class="sub-title">SYNOPSIS</h2>
+                <p class="desc">
+                    4月から翌年の3月まで。<br>
+                    毎日の通学・通勤電車で偶然隣り合わせになる「お姉さん」と、<br>
+                    受験生の「俺」の、一年間の記録。<br><br>
+                    日々の仕事に疲れ気味だった彼女は、ウブな俺にちょっぴりエッチなイタズラを仕掛け、からかっては反応を楽しむようになる。<br>
+                    季節が巡る中、プレゼントを贈り合ったり、少しずつ、確実に縮まっていく二人の距離。<br><br>
+                    そして迎える3月、志望校である声都大学への合格。<br>
+                    「この電車で会う最後の日かも」<br>
+                    そう告げられた別れと、4月の入学式に待っていた再会──。
+                </p>
+            </div>
+
+            <div class="whisper-box left-align reveal-text" style="margin-top: 40vh;">
+                <p class="voice">「んー……手袋、あったかいね……」</p>
+                <span class="context">── 冬。悴む手を包み込むように。</span>
+            </div>
+
+            <div class="whisper-box right-align reveal-text" style="margin-top: 40vh;">
+                <p class="voice">「合格、おめでとう。……いよいよ、お別れだね」</p>
+                <span class="context">── 3月。桜が咲く前の、少し冷たい風。</span>
+            </div>
+
+            <div class="whisper-box center-align character-box reveal-text" style="margin-top: 40vh;">
+                <h2 class="sub-title">CHARACTERS</h2>
+                <div class="char-pair">
+                    <div class="char-info">
+                        <h3>お姉さん</h3>
+                        <p>ブラック気味の会社に勤める女性。最初は少しでも寝る時間を確保するために少年と同じ車両に乗っていた。ウブな少年をからかうのが好き。少年との日々の交流に癒され、最終的には転職活動を成功させ、声都大学の職員に。
+                        </p>
+                    </div>
+                    <div class="char-info">
+                        <h3>少年（主人公/俺）</h3>
+                        <p>高校3年生の受験生。非常にウブで照れ屋な性格をしており、お姉さんのイタズラに毎回素直に動揺して赤面する。電車内での逢瀬を重ねながらも真面目に勉強に取り組み、超名門である志望校「声都大学」に見事合格を果たす。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="whisper-box center-align reveal-text" style="margin-top: 40vh; margin-bottom: 20vh;">
+                <p class="voice final-voice">「……また、隣いいかな？ 少年くん」</p>
+                <span class="context">── 4月。そして、新しい始まり。</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="train-footer">
+        &copy; 2026 電車のお姉さん / Author: @h-ar-u
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            // Scroll Reveal Text
+            function checkScroll() {
+                const reveals = document.querySelectorAll('.reveal-text');
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+
+                reveals.forEach(reveal => {
+                    const revealTop = reveal.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - revealPoint) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // Trigger on load
+
+            // Subtle Parallax Background (Optional)
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                // Move the background slightly to simulate train motion
+                document.body.style.backgroundPositionY = `${scrolled * 0.1}px`;
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>裸の私を愛さないで外伝 ─ 「江戸さんの日記」</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Old+Mincho:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="gallery-header">
+        <div class="header-inner">
+            <a href="../index.html" class="nav-return">← ポータルへ戻る</a>
+            <div class="header-brand">Edo's Diary & Gallery</div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Photo Gallery aesthetic) -->
+    <section class="hero reveal">
+        <div class="hero-content">
+            <h1 class="font-zen">
+                <span class="subtitle">裸の私を愛さないで外伝</span>
+                <br>
+                「江戸さんの日記」
+            </h1>
+            <p class="catchcopy">
+                ――失われていく時間の尊さを、一枚の写真と、日々の記録に。
+            </p>
+        </div>
+
+        <!-- Minimalist Photo Slideshow mock -->
+        <div class="gallery-preview">
+            <div class="frame">
+                <div class="photo photo-1">
+                    <span class="caption">「雪とカメラ」</span>
+                </div>
+            </div>
+            <div class="frame">
+                <div class="photo photo-2">
+                    <span class="caption">「何気ない食卓（カップそばとおにぎり）」</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Synopsis (Diary format) -->
+    <section class="section-container reveal">
+        <h2 class="section-title"><span class="eng">Synopsis</span> 作品概要</h2>
+        <div class="diary-entry">
+            <div class="entry-date">0年目。12月31日 ―― 彼女がやってきた日</div>
+            <p>
+                余命10年を宣告された女性、智咲との同棲生活。<br>
+                私たちは肉体関係を持たないと約束しながらも、額や唇へのキス、ハグを通じて深い愛情を確認し合う。<br>
+                <br>
+                彼女の「喪失の傷を撮る写真家」としての再起。<br>
+                一緒にラーメンを食べたり、七夕祭りに出かけたり、風邪を引いて看病し合ったり……。<br>
+                静かで日常的な幸せの中にある、常に失われることへの痛みを、私はこの日記に綴る。
+            </p>
+        </div>
+    </section>
+
+    <!-- Characters (Photo exhibition format) -->
+    <section class="section-container reveal">
+        <h2 class="section-title"><span class="eng">Portraits</span> 人物紹介</h2>
+
+        <div class="portraits-grid">
+            <!-- Edo -->
+            <div class="portrait-card">
+                <div class="portrait-photo">
+                    <div class="photo-placeholder"></div>
+                </div>
+                <div class="portrait-info">
+                    <h3 class="font-zen">江戸さん</h3>
+                    <span class="role">主人公 / 語り手 / 写真スタジオ責任者</span>
+                    <p>
+                        本作の語り手であり、日記の筆者。写真スタジオで働いており、智咲を自宅に迎え入れて同棲している。智咲を深く愛しており、彼女の才能を「誇らしい」と感じる一方、彼女の余命や自身の葛藤を抱える。過去に育児経験があり、りっちゃんの成長を見守ってきた。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Chisaki -->
+            <div class="portrait-card">
+                <div class="portrait-photo">
+                    <div class="photo-placeholder"></div>
+                </div>
+                <div class="portrait-info">
+                    <h3 class="font-zen">智咲</h3>
+                    <span class="role">余命10年の女性 / 写真家</span>
+                    <p>
+                        余命10年を告げられた女性。進行性の症状で手に力が入らなくなってきているが、江戸さんから贈られたカメラを機に、「喪失の傷を撮る写真家」としての活動を本格的に再開する。江戸さんに深い愛情と信頼を寄せている。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ricchan -->
+            <div class="portrait-card">
+                <div class="portrait-photo">
+                    <div class="photo-placeholder"></div>
+                </div>
+                <div class="portrait-info">
+                    <h3 class="font-zen">りっちゃん</h3>
+                    <span class="role">江戸さんの親しい知人</span>
+                    <p>
+                        江戸さんが幼い頃から知っている女性。現在は大人になり、大食いの彼氏を江戸さんに紹介している。智咲とも良好な関係を築いている。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Episodes (Archive list) -->
+    <section class="section-container reveal">
+        <h2 class="section-title"><span class="eng">Archives</span> 記録一覧</h2>
+
+        <div class="episodes-list">
+            <a href="#" class="ep-row">
+                <span class="ep-date">2026.02.26</span>
+                <span class="ep-title">第1話：0年目。12月31日</span>
+            </a>
+            <a href="#" class="ep-row">
+                <span class="ep-date">2026.02.27</span>
+                <span class="ep-title">第2話：カメラと喪失の傷</span>
+            </a>
+            <a href="#" class="ep-row">
+                <span class="ep-date">2026.02.28</span>
+                <span class="ep-title">第3話：七夕祭りとブルーハワイ</span>
+            </a>
+            <a href="#" class="ep-row">
+                <span class="ep-date">2026.03.01</span>
+                <span class="ep-title">第4話：カップそばとおにぎりの食卓</span>
+            </a>
+            <a href="#" class="ep-row" style="opacity: 0.5;">
+                <span class="ep-date">※全11話（連載中）</span>
+                <span class="ep-title">To Be Continued...</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gallery-footer">
+        &copy; 2026 裸の私を愛さないで外伝「江戸さんの日記」 / Author: 山田しょう子 (@monokaki368)
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            // Reveal Animation
+            function runReveal() {
+                document.querySelectorAll('.reveal, .portrait-card').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', runReveal);
+            runReveal(); // trigger on load
+        })();
+    </script>
+</body>
+
+</html>

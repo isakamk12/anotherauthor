@@ -1,0 +1,288 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-white: #FCFBF9;
+    /* Warm off-white */
+    --text-dark: #3A2F2B;
+    /* Dark brown/grey */
+    --accent-amber: #D88B4A;
+    /* Warm sunlight/sunset amber */
+    --accent-pink: #E8AFB5;
+    /* Soft blush pink */
+    --shadow-soft: rgba(216, 139, 74, 0.15);
+}
+
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Hide scrollbar for immersive feel */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-amber) var(--bg-white);
+}
+
+body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: var(--text-dark);
+    line-height: 2.0;
+    overflow-x: hidden;
+    position: relative;
+    letter-spacing: 0.05em;
+    min-height: 100vh;
+
+    /* Background: Evening train / warm sunlight gradient */
+    background: linear-gradient(180deg,
+            #FCFBF9 0%,
+            #FFF4E6 50%,
+            #FBE9E7 100%);
+    background-attachment: fixed;
+    background-size: 100% 200%;
+}
+
+/* Mouse Canvas */
+#mouse-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 99998;
+}
+
+/* Sub-font for elegant ASMR whispers */
+.font-yuji {
+    font-family: 'Yuji Syuku', serif;
+}
+
+/* ===== Header ===== */
+.train-header {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+}
+
+.nav-return {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: color 0.3s, transform 0.3s;
+    opacity: 0.7;
+}
+
+.nav-return:hover {
+    color: var(--accent-amber);
+    opacity: 1;
+    display: inline-block;
+    transform: translateX(-5px);
+}
+
+/* ===== Hero Section ===== */
+.scroll-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.title {
+    font-family: 'Yuji Syuku', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.asmr-tag {
+    color: var(--accent-pink);
+    font-size: 1.5rem;
+    vertical-align: top;
+}
+
+.scroll-prompt {
+    position: absolute;
+    bottom: 50px;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--accent-amber);
+    animation: fadeBounce 2s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* ===== Whisper ASMR Flow ===== */
+.whisper-flow {
+    padding-bottom: 100px;
+}
+
+.whisper-box {
+    width: 80%;
+    margin-bottom: 20vh;
+}
+
+.left-align {
+    margin-right: auto;
+    text-align: left;
+}
+
+.right-align {
+    margin-left: auto;
+    text-align: right;
+}
+
+.center-align {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.voice {
+    font-family: 'Yuji Syuku', serif;
+    font-size: 2.2rem;
+    color: var(--accent-amber);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    /* Soft glowing blur for ASMR feel */
+    text-shadow: 0 0 15px var(--shadow-soft);
+}
+
+.final-voice {
+    font-size: 2.5rem;
+    color: var(--accent-pink);
+}
+
+.context {
+    font-size: 0.9rem;
+    color: #887E7A;
+    letter-spacing: 2px;
+}
+
+/* Text Reveal Animation (Fading up slowly like a whisper) */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.5s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Synopsis & Character Boxes ===== */
+.synopsis-box,
+.character-box {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+}
+
+.sub-title {
+    font-family: 'Yuji Syuku', serif;
+    font-size: 1.8rem;
+    color: var(--accent-amber);
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.desc {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.char-pair {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+}
+
+.char-info {
+    flex: 1;
+    background: #FFF;
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 3px solid var(--accent-pink);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+}
+
+.char-info h3 {
+    font-family: 'Yuji Syuku', serif;
+    color: var(--accent-amber);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.char-info p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ===== Footer ===== */
+.train-footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.85rem;
+    color: #A09591;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .whisper-box {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .voice {
+        font-size: 1.6rem;
+    }
+
+    .char-pair {
+        flex-direction: column;
+    }
+
+    .char-info {
+        padding: 20px;
+    }
+}

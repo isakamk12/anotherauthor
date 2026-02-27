@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烏城崎京助の密室推理</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif+JP:wght@400;600;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="mystery-header">
+        <div class="header-inner">
+            <a href="../index.html" class="nav-return">PORTAL ─ 返回</a>
+            <div class="header-brand">USHIROZAKI MYSTERY CASE FILES</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+        <div class="hero-bg-graphic">
+            <div class="keyhole"></div>
+            <div class="red-line"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="title">
+                <span class="sub">烏と狼の学園事件簿 ──</span><br>
+                烏城崎京助の密室推理
+            </h1>
+            <p class="catchcopy">
+                「密室なんて、最初から存在しなかったんですよ」
+            </p>
+        </div>
+    </section>
+
+    <!-- Synopsis -->
+    <section class="section-container reveal">
+        <div class="sec-title-wrap">
+            <h2 class="section-title"><span>S</span>YNOPSIS</h2>
+            <div class="sec-subtitle">あらすじ</div>
+        </div>
+
+        <div class="content-box">
+            <p class="lead-text">羽根坂高校の生徒会室で起きた、凄惨な殺人事件。</p>
+            <p>
+                被害者は生徒会副会長の朝倉和也。胸をペインティングナイフで突かれたその現場は、中から施錠され、さらに鍵穴にはボンドが詰められた完全な「密室」状態であった。<br><br>
+                捜査一課の警部でさえ頭を抱えるこの難事件に、一人の生徒が首を突っ込む。<br>
+                空き教室を不法占拠し自称探偵を名乗る高校2年生──烏城崎京助。<br><br>
+                「助手が必要だ」<br><br>
+                彼に指名されたのは、ミステリ小説好きの生徒会書記・古狼透花。二人は奇妙なバディを組み、鍵のタグに隠された「すり替えトリック」の全貌を暴き出していく。<br>
+                王道かつスタイリッシュな学園ミステリ、開幕。
+            </p>
+        </div>
+    </section>
+
+    <!-- Characters -->
+    <section class="section-container reveal">
+        <div class="sec-title-wrap">
+            <h2 class="section-title"><span>C</span>HARACTERS</h2>
+            <div class="sec-subtitle">登場人物</div>
+        </div>
+
+        <div class="char-grid">
+            <!-- Detective -->
+            <div class="char-card">
+                <div class="char-badge crow-badge">Crow</div>
+                <h3 class="char-name">烏城崎 京助 <span class="char-yomi">Kyosuke Ushirozaki</span></h3>
+                <div class="char-role">探偵 / 2年1組</div>
+                <p>空き教室を勝手に探偵部の部室にしている男子生徒。警察顔負けの卓越した推理力と観察眼を持つ。</p>
+            </div>
+
+            <!-- Assistant -->
+            <div class="char-card">
+                <div class="char-badge wolf-badge">Wolf</div>
+                <h3 class="char-name">古狼 透花 <span class="char-yomi">Toka Koro</span></h3>
+                <div class="char-role">助手・語り手 / 2年3組 生徒会書記（新会長）</div>
+                <p>ミステリ小説好きが高じて烏城崎に目をつけられ、強制的に助手に任命される。読者視点のツッコミ役。</p>
+            </div>
+
+            <!-- Victim / Suspect / Police -->
+            <div class="char-card sub-char">
+                <h3 class="char-name">姫川 香恋 <span class="char-yomi">Karen Himekawa</span></h3>
+                <div class="char-role">3年生 生徒会長</div>
+                <p>美人で真面目、誰にでも優しく校内にファンも多い完璧な生徒会長。朝倉と同じ大学の推薦枠を争っていた。</p>
+            </div>
+
+            <div class="char-card sub-char">
+                <h3 class="char-name">朝倉 和也 <span class="char-yomi">Kazuya Asakura</span></h3>
+                <div class="char-role">3年生 生徒会副会長 / 被害者</div>
+                <p>学年トップクラスの秀才。何者かによって密室状態の生徒会室で殺害される。</p>
+            </div>
+
+            <div class="char-card sub-char black-bg">
+                <h3 class="char-name">猫又警部 & 犬飼刑事 <span class="char-yomi">Police</span></h3>
+                <div class="char-role">警視庁捜査一課</div>
+                <p>猫又警部は可愛い名前に反してガタイの良い強面。難航する密室事件の捜査にあたる。</p>
+            </div>
+
+            <div class="char-card sub-char">
+                <h3 class="char-name">園原先生 <span class="char-yomi">Sonohara</span></h3>
+                <div class="char-role">理科教師 / 容疑者</div>
+                <p>事件当日、最後まで学校に残っていたため警察から疑いの目を向けられている。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Episodes -->
+    <section class="section-container reveal">
+        <div class="sec-title-wrap">
+            <h2 class="section-title"><span>F</span>ILES</h2>
+            <div class="sec-subtitle">事件簿（全4話 / 完結済）</div>
+        </div>
+
+        <div class="file-list">
+            <a href="#" class="file-row">
+                <div class="file-num">File.01</div>
+                <div class="file-name">密室の生徒会室と、勝手に部室を作る男</div>
+            </a>
+            <a href="#" class="file-row">
+                <div class="file-num">File.02</div>
+                <div class="file-name">詰まったボンドと、集められた容疑者</div>
+            </a>
+            <a href="#" class="file-row">
+                <div class="file-num">File.03</div>
+                <div class="file-name">現場検証。そして見え透いた嘘</div>
+            </a>
+            <a href="#" class="file-row">
+                <div class="file-num">File.04</div>
+                <div class="file-name">すり替わった鍵タグ。探偵と助手の誕生</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mystery-footer">
+        <div class="red-line-bottom"></div>
+        &copy; 2026 烏と狼の学園事件簿 / Author: @h-ar-u
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            // Reveal Animation
+            function runReveal() {
+                document.querySelectorAll('.reveal').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', runReveal);
+            runReveal(); // trigger on load
+        })();
+    </script>
+</body>
+
+</html>
