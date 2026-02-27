@@ -97,12 +97,35 @@
                 dateEl.textContent = `${now.getFullYear()} . ${String(now.getMonth() + 1).padStart(2, '0')} . ${String(now.getDate()).padStart(2, '0')} // ARCHIVE RECORD`;
             }
 
-            // Reveal Animation
+            // Reveal Animation with Stagger
             function runReveal() {
-                document.querySelectorAll('.reveal').forEach(el => {
-                    if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
+                const reveals = document.querySelectorAll('.reveal');
+                reveals.forEach((el, index) => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                        // If it's inside the grid, stagger based on its child index
+                        if (el.classList.contains('ad-grid')) {
+                            el.classList.add('active');
+                            const cells = el.querySelectorAll('.ad-cell');
+                            cells.forEach((cell, i) => {
+                                setTimeout(() => {
+                                    cell.style.opacity = '1';
+                                    cell.style.transform = 'translateY(0) scale(1)';
+                                }, i * 100); // 100ms stagger between cards
+                            });
+                        } else {
+                            el.classList.add('active');
+                        }
+                    }
                 });
             }
+
+            // Set initial state for staggered children
+            document.querySelectorAll('.ad-grid .ad-cell').forEach(cell => {
+                cell.style.opacity = '0';
+                cell.style.transform = 'translateY(30px) scale(0.98)';
+                cell.style.transition = 'opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1)';
+            });
+
             window.addEventListener('scroll', runReveal);
             runReveal();
         })();
