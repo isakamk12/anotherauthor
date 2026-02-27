@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彼女のとなり</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="lite-header">
+        <div class="header-inner">
+            <a href="../index.html" class="nav-return">◀ ポータルへ戻る</a>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="title-area">
+                <h1 class="main-title font-mincho">彼女のとなり</h1>
+                <p class="subtitle font-mincho">The Quiet Time Beside Her</p>
+                <div class="catchcopy font-mincho">
+                    思いを言葉にして、今の関係が壊れるくらいなら。<br>
+                    僕はただ、この静かな時間を傍で過ごしていたい。
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis -->
+        <section class="section-container reveal">
+            <div class="text-block">
+                <h2 class="section-heading font-mincho">あらすじ</h2>
+                <p class="font-mincho leading-relaxed">
+                    「僕」から「彼女」への、静かで切ない片想い。<br><br>
+                    劇的な事件や派手な会話はありません。<br>
+                    図書室の静寂、授業中のチョークの音、休日のふとした仕草。<br>
+                    日常のささいな瞬間と、彼女の横顔をただ見つめている時間。<br><br>
+                    壊れやすい距離感を保ちながら、同じ空気を吸うことだけを望む、<br>
+                    透明な純文学的青春短編。
+                </p>
+            </div>
+        </section>
+
+        <!-- Characters -->
+        <section class="section-container reveal">
+            <div class="text-block">
+                <h2 class="section-heading font-mincho">登場人物</h2>
+
+                <div class="char-row">
+                    <h3 class="char-name font-mincho">僕（語り手）</h3>
+                    <p class="font-mincho">彼女に片想いをしている主人公。図書室や教室で、彼女の髪を耳にかける仕草や、マスク越しにメガネが曇る様子など、細かな一挙手一投足を静かに見つめている。
+                    </p>
+                </div>
+
+                <div class="char-row">
+                    <h3 class="char-name font-mincho">彼女</h3>
+                    <p class="font-mincho">主人公の想い人。無意識で自然体な振る舞いが特徴。図書室で静かに本を読んだり、授業中に真剣にノートを取ったりしている。休日には少し大人びた私服姿を見せる。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Episodes -->
+        <section class="section-container reveal">
+            <div class="text-block">
+                <h2 class="section-heading font-mincho">収録短編（全3話）</h2>
+
+                <ul class="episode-list font-mincho">
+                    <li>
+                        <span class="ep-num">第1話</span>
+                        <div class="ep-details">
+                            <span class="ep-title">「沈黙のとなり」</span>
+                            <span class="ep-desc">放課後の図書室。ページをめくる音と息づかいだけが響く空間。</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="ep-num">第2話</span>
+                        <div class="ep-details">
+                            <span class="ep-title">「板書のとなり」</span>
+                            <span class="ep-desc">退屈な授業中の教室。隣の席でノートを取る彼女の横顔。</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="ep-num">第3話</span>
+                        <div class="ep-details">
+                            <span class="ep-title">「私服のとなり」</span>
+                            <span class="ep-desc">休日の食事。大人びた私服姿を胸の奥にしまっておく決意。</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div> <!-- End Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="lite-footer font-mincho">
+        &copy; 2026 彼女のとなり / Author: @h-ar-u
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            // Scroll Reveal Text
+            function checkScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const revealPoint = 100;
+
+                reveals.forEach(reveal => {
+                    const revealTop = reveal.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - revealPoint) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>納期に追われる転生者、魔王を倒して異世界永住を目指します！</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Sans+JP:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="deadline-header">
+        <div class="header-inner">
+            <a href="../index.html" class="nav-return">◀ ポータルへ</a>
+            <div class="system-clock" id="sys-clock">00:00:00</div>
+        </div>
+    </header>
+
+    <!-- Background Layer (Beautiful Fantasy) -->
+    <div class="fantasy-bg">
+        <div class="sky"></div>
+        <div class="mountains"></div>
+        <div class="castle"></div>
+        <div class="grass"></div>
+    </div>
+
+    <!-- UI Layer (Corporate Popups & Task Boards) -->
+    <div class="ui-layer">
+
+        <!-- Main Hero Title -->
+        <div class="hero-title-box">
+            <h1 class="font-noto">
+                <span class="sub">納期に追われる転生者、</span><br>
+                魔王を倒して<br>異世界永住を目指します！
+            </h1>
+        </div>
+
+        <!-- The Annoying Popup (Urgent Task) -->
+        <div class="popup-window urgent-popup" id="initial-popup">
+            <div class="popup-header">
+                <span class="popup-title">⚠️ 警告：納期遅延リスク</span>
+                <button class="popup-close"
+                    onclick="document.getElementById('initial-popup').style.display='none'">×</button>
+            </div>
+            <div class="popup-body">
+                <p><strong>原涼介 様</strong></p>
+                <p>天界転生管理局よりお知らせです。<br>魔力結晶（ユーティリティコア）の<span class="danger-text">初回納入期限まであと7日</span>です。</p>
+                <p>現在の納入数： <span class="danger-text">0 / 100</span></p>
+                <h3 class="blink-text">※未送信＝強制成仏です。至急ご対応ください。</h3>
+            </div>
+            <div class="popup-footer">
+                <button class="btn btn-primary"
+                    onclick="document.getElementById('initial-popup').style.display='none'">了承（クエストへ向かう）</button>
+            </div>
+        </div>
+
+        <!-- Quest Board -->
+        <section class="section-container">
+            <div class="quest-board">
+                <div class="board-header">
+                    <h2>📋 タスク一覧（アストルディア冒険者ギルド）</h2>
+                    <div class="filter-tabs">
+                        <span class="tab active">未完了 (14)</span>
+                        <span class="tab">進行中 (1)</span>
+                        <span class="tab">完了 (0)</span>
+                    </div>
+                </div>
+
+                <ul class="task-list">
+                    <li class="task-item urgent">
+                        <div class="task-status">納期: 7日後</div>
+                        <div class="task-content">
+                            <h3>【必須】魔力結晶（ユーティリティコア）の納入</h3>
+                            <p>魔獣を討伐し、100個のコアを天界へ送信すること。</p>
+                        </div>
+                        <div class="task-action">
+                            <button class="btn btn-danger">遂行中</button>
+                        </div>
+                    </li>
+                    <li class="task-item high">
+                        <div class="task-status">目標: 中期</div>
+                        <div class="task-content">
+                            <h3>【目標】魔王討伐スケジュール立案</h3>
+                            <p>全魔獣を消滅させ、自動送信システム（異世界永住権）を確立するためのロードマップ作成。</p>
+                        </div>
+                        <div class="task-action">
+                            <button class="btn btn-secondary">未着手</button>
+                        </div>
+                    </li>
+                    <li class="task-item normal">
+                        <div class="task-status">期限なし</div>
+                        <div class="task-content">
+                            <h3>爆乳・超乳の女性を探す</h3>
+                            <p>オタクとしての個人的なモチベーション維持施策。</p>
+                        </div>
+                        <div class="task-action">
+                            <button class="btn btn-secondary">未着手</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Characters & Synopsis -->
+        <section class="section-container split-layout">
+            <div class="info-card">
+                <h2>👤 リソース（登場人物）</h2>
+
+                <div class="char-block">
+                    <h3>原 涼介</h3>
+                    <p class="role">担当：現場作業員（勇者候補）</p>
+                    <p>天界のシステムトラブルで事故死したオタク青年。詫びとして転生したが、強制成仏の恐怖に怯えながら社畜のように魔獣を狩る羽目に。</p>
+                </div>
+
+                <div class="char-block mt-4">
+                    <h3>ミラ</h3>
+                    <p class="role">担当：タスク管理アシスタント（天使）</p>
+                    <p>天界転生管理局・地球課の案内係。涼介の頭の中に常駐し、システム音と共に納期を急かしてくる。早く仕事を終わらせて楽になりたい。</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h2>📄 プロジェクト概要（あらすじ）</h2>
+                <div class="synopsis-content">
+                    <p>
+                        天界のシステムトラブルにより事故死した原涼介は、神様の詫びとしてファンタジー世界への転生を果たす。<br><br>
+                        しかし、転生先で魂を維持するためには、魔獣からドロップする「魔力結晶」を定期的に天界へ送信せねばならず、<strong>未送信（納期遅れ）は「強制成仏」を意味していた。</strong><br><br>
+                        唯一の解決策は、魔王を倒して全魔獣を消滅させ、コアの自動送信システムを構築すること。<br><br>
+                        涼介は「初回納期：7日以内にコア100個」という厳しいノルマと、頭の中に響く天使ミラの「催促アナウンス」に追われながら、異世界に永住するための過酷な社畜冒険録をスタートさせる！
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- End UI Layer -->
+
+    <footer class="deadline-footer">
+        &copy; 2026 納期に追われる転生者 / Author: @h-ar-u
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        // Fake System Clock
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('sys-clock').innerText = now.toLocaleTimeString('ja-JP');
+        }, 1000);
+
+        // Annoying Popups Generator
+        setInterval(() => {
+            if (document.querySelectorAll('.popup-window').length > 3) return; // Don't overwhelm too much
+
+            const msgs = [
+                '【リマインド】コア納入まで残り167時間',
+                'ミラ「早く狩りに行ってください」',
+                '【エラー】聖印の魔力低下を検知！',
+                'タスク「スライム討伐」がアサインされました'
+            ];
+
+            const popup = document.createElement('div');
+            popup.className = 'popup-window small-popup';
+
+            // Random position away from center
+            const x = Math.random() * (window.innerWidth - 300);
+            const y = Math.random() * (window.innerHeight - 100);
+
+            popup.style.left = `${x}px`;
+            popup.style.top = `${y}px`;
+
+            popup.innerHTML = `
+                <div class="popup-header">
+                    <span class="popup-title">通知</span>
+                    <button class="popup-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                </div>
+                <div class="popup-body" style="padding: 10px;">
+                    <p>${msgs[Math.floor(Math.random() * msgs.length)]}</p>
+                </div>
+            `;
+
+            document.querySelector('.ui-layer').appendChild(popup);
+
+            // Play a fake chime sound visually via animation frame if we had one, but we'll just show it.
+        }, 8000); // Every 8 seconds
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-color: #FAFAF8;
+    /* Pure Ivory/Kinari */
+    --text-color: #4A4A4A;
+    /* Soft Charcoal */
+    --accent-blue: #A8C9DB;
+    /* Pale pale blue */
+    --accent-grey: #D8D8D8;
+}
+
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Shippori Mincho', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 2.2;
+    overflow-x: hidden;
+    position: relative;
+    letter-spacing: 0.1em;
+    min-height: 100vh;
+
+    /* Subtle frosted glass / pure literature effect bg */
+    background-image: radial-gradient(circle at 50% 50%, #FFFFFF 0%, #FAFAF8 100%);
+    background-attachment: fixed;
+}
+
+.font-mincho {
+    font-family: 'Shippori Mincho', serif;
+}
+
+/* Mouse Canvas */
+#mouse-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 99998;
+}
+
+/* ===== Header ===== */
+.lite-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-return {
+    color: var(--accent-grey);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    transition: color 0.4s;
+}
+
+.nav-return:hover {
+    color: var(--accent-blue);
+}
+
+/* ===== Wrapper & Layout ===== */
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.title-area {
+    /* Minimalist vertical alignment feel, though horizontal layout here */
+    border-left: 1px solid var(--accent-grey);
+    padding-left: 40px;
+    margin-left: 20px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 10px;
+    letter-spacing: 0.2em;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--accent-grey);
+    letter-spacing: 0.3em;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+}
+
+.catchcopy {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 2.4;
+    position: relative;
+}
+
+.catchcopy::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 15px;
+    width: 20px;
+    height: 1px;
+    background: var(--accent-blue);
+}
+
+/* ===== Sections ===== */
+.section-container {
+    margin-bottom: 150px;
+    padding-top: 50px;
+}
+
+.section-container:last-child {
+    margin-bottom: 100px;
+}
+
+.text-block {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--accent-blue);
+    margin-bottom: 40px;
+    letter-spacing: 0.3em;
+    text-align: center;
+}
+
+.leading-relaxed {
+    line-height: 2.6;
+    font-size: 1.05rem;
+    text-align: justify;
+}
+
+/* Characters */
+.char-row {
+    margin-bottom: 50px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    /* Soft border blur to mimic glasses misting */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.char-name {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid var(--accent-grey);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.char-row p {
+    font-size: 1rem;
+    line-height: 2.2;
+}
+
+/* Episodes */
+.episode-list {
+    list-style: none;
+}
+
+.episode-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed var(--accent-grey);
+}
+
+.episode-list li:last-child {
+    border-bottom: none;
+}
+
+.ep-num {
+    font-size: 0.9rem;
+    color: var(--accent-blue);
+    width: 80px;
+    flex-shrink: 0;
+    padding-top: 5px;
+}
+
+.ep-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.ep-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.ep-desc {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+/* ===== Footer ===== */
+.lite-footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.8rem;
+    color: var(--accent-grey);
+    letter-spacing: 0.2em;
+}
+
+/* Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title-area {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .catchcopy::before {
+        display: none;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .content-wrapper {
+        padding: 0 20px;
+    }
+}

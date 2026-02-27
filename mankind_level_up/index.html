@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全人類のレベルが上がりすぎて、宇宙人の侵攻を撃退した件</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+    
+    <!-- Meta-Fiction Final Background (Cafe/Script) - hidden initially -->
+    <div class="meta-background"></div>
+
+    <!-- Header Navigation -->
+    <header class="glitch-header">
+        <a href="../index.html" class="nav-return">■ SYSTEM: RETURN TO PORTAL</a>
+    </header>
+
+    <div id="main-content" class="main-layer">
+        
+        <!-- Hero Section (SF vs Fantasy Split) -->
+        <section class="hero-split">
+            <!-- Left: SF / Muna Aliens -->
+            <div class="split sf-side">
+                <div class="sf-overlay"></div>
+                <div class="side-content">
+                    <h2 class="side-title font-orbitron">MUNA EMPIRE</h2>
+                    <p class="side-desc">文明レベル99の大艦隊。<br>圧倒的な科学の力で、劣等星・地球を蹂躙するはずだった。</p>
+                </div>
+            </div>
+            
+            <!-- Right: Fantasy / Earthlings -->
+            <div class="split fantasy-side">
+                <div class="fantasy-overlay"></div>
+                <div class="side-content">
+                    <h2 class="side-title font-mincho">EARTH - Level MAX</h2>
+                    <p class="side-desc">魔法とチートによる圧倒的な身体能力。<br>宇宙人襲来は、もはや「小遣い稼ぎ」の防衛イベントでしかなかった。</p>
+                </div>
+            </div>
+            
+            <!-- Central Title Box -->
+            <div class="hero-title-box">
+                <div class="title-inner glitch" data-text="全人類のレベルが上がりすぎて">
+                    <h1>
+                        <span class="main-title">全人類のレベルが上がりすぎて、<br><span class="highlight-red">宇宙人の侵攻を撃退した件</span></span>
+                        <span class="sub-title">～地球人は宇宙侵略に乗り出すか？～</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis (Terminal style) -->
+        <section class="section-container synopsis-section">
+            <h2 class="section-heading font-orbitron">>_ ARCHIVE.DAT</h2>
+            <div class="terminal-box">
+                <p>
+                    地球に「ダンジョン」が出現してから約100年。<br>
+                    全人類はレベルを限界まで上げ、チート級の「魔法」と身体能力を持つ化け物だらけの世界となっていた。<br><br>
+                    そこへ、文明レベル99を自負する宇宙間国家「ムーナ星」の大艦隊が、地球を文明レベル1の劣等星と見下して侵略を開始する。しかし、放たれたレーザー砲は人類の魔法であっさり防がれ、逆に魔法の猛攻によって宇宙人の艦隊はなす術なく壊滅させられてしまう。
+                </p>
+                <div class="warning-text">
+                    [WARNING] 攻守交替。地球艦隊による、ムーナ星への大侵略作戦開始。
+                </div>
+                <p>
+                    魔法と科学を合わせた地球艦隊の前に、ムーナ星人は絶体絶命の窮地に陥る。<br>
+                    追い詰められたムーナ星の王は、自らの「天の川銀河の認識」と引き換えに対象の存在を消す最終兵器「ME」を使用する。
+                </p>
+            </div>
+        </section>
+
+        <!-- Characters (Hologram style) -->
+        <section class="section-container characters-section">
+            <h2 class="section-heading font-orbitron">>_ ENTITIES</h2>
+            
+            <div class="char-grid">
+                <!-- Earth -->
+                <div class="char-card earth-card">
+                    <div class="char-faction font-mincho">【地球人側】</div>
+                    <div class="char-item">
+                        <h3 class="char-name">流（流山）</h3>
+                        <p>海岸沿いで宇宙船を100機撃墜した探検家の男。<span class="meta-tag">※エピローグでは現代のカフェにいる</span></p>
+                    </div>
+                    <div class="char-item">
+                        <h3 class="char-name">宗太</h3>
+                        <p>流の友人で、同じく120機を撃墜した探検家。</p>
+                    </div>
+                    <div class="char-item">
+                        <h3 class="char-name">日本支部の隊長</h3>
+                        <p>宇宙人襲来に対し、森の中で魔法による迎撃の指揮を執った冷静な人物。</p>
+                    </div>
+                </div>
+                
+                <!-- Muna -->
+                <div class="char-card muna-card">
+                    <div class="char-faction font-orbitron">【ムーナ星人側】</div>
+                    <div class="char-item">
+                        <h3 class="char-name">総艦長・総参謀</h3>
+                        <p>圧倒的な科学力で日本殲滅作戦の指揮を執るが、地球人の「魔法」という未知の力に対応できず敗北。</p>
+                    </div>
+                    <div class="char-item">
+                        <h3 class="char-name">ムーナ星の王</h3>
+                        <p>逆に地球人から侵略を受け、歴史と記憶を代償にする諸刃の最終兵器「ME」の使用を決断する。</p>
+                    </div>
+                    <div class="char-item">
+                        <h3 class="char-name">ヤー</h3>
+                        <p>地球に降り立ち、圧倒的な地球人の力に絶望して山奥を逃げ惑う宇宙人。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- The Glitch / Meta Transition Trigger -->
+        <div id="glitch-trigger" class="glitch-trigger-zone">
+            <!-- As the user scrolls past this, we fade out the SF world and show the cafe/script -->
+            <h2 class="glitch" data-text="SYSTEM FAILURE: HISTORY ERASED">SYSTEM FAILURE: HISTORY ERASED</h2>
+        </div>
+
+    </div> <!-- End Main Layer -->
+
+    <!-- Epilogue Meta Content (Hidden until scroll) -->
+    <div id="meta-content" class="meta-layer">
+        <div class="script-paper">
+            <div class="script-title">「架空の魔法が現実になる小説」</div>
+            <p>
+                戦争の記憶は両者から塵一つ残さず消滅し、物語は2025年の東京へ。<br><br>
+                一人の男（流山）がカフェで友人に語る。<br>
+                「架空の魔法が現実になる小説を思いついたんだ」<br><br>
+                それは、平和な日常の光景。<br>
+                宇宙人も、魔法も、巨大な艦隊も、すべてはこの原稿用紙の中の出来事に収束したのだった。
+            </p>
+        </div>
+        <!-- Footer -->
+        <footer class="meta-footer">
+            &copy; 2026 全人類のレベルが上がりすぎて / Author: 流山忠勝
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            const triggerZone = document.getElementById('glitch-trigger');
+            const mainLayer = document.getElementById('main-content');
+            const metaLayer = document.getElementById('meta-content');
+            const metaBackground = document.querySelector('.meta-background');
+            const header = document.querySelector('.glitch-header');
+
+            function handleScroll() {
+                const triggerPoint = triggerZone.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                // When the trigger zone reaches the middle of the screen
+                if (triggerPoint < windowHeight * 0.5) {
+                    // Activate Metaworld
+                    mainLayer.classList.add('hide-glitch');
+                    metaBackground.classList.add('active');
+                    metaLayer.classList.add('active');
+                    header.style.opacity = '0'; // hide SF header
+                    document.body.classList.add('meta-active');
+                } else {
+                    // Revert to SF World
+                    mainLayer.classList.remove('hide-glitch');
+                    metaBackground.classList.remove('active');
+                    metaLayer.classList.remove('active');
+                    header.style.opacity = '1';
+                    document.body.classList.remove('meta-active');
+                }
+            }
+            
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        })();
+    </script>
+</body>
+
+</html>

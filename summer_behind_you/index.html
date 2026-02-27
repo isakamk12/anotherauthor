@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>裏の夏、君と追う</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;500&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="summer-header">
+        <div class="header-inner">
+            <a href="../index.html" class="nav-return">◀ ポータルへ</a>
+            <div class="header-brand">裏の夏、君と追う</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-glass">
+            <h1 class="main-title font-mincho">
+                裏の夏、<br>君と追う
+            </h1>
+            <p class="catchcopy">
+                「忘れないよ。君がこの世界に、確かにいたこと」
+            </p>
+        </div>
+
+        <!-- Animated Parkour Silhouette -->
+        <div class="parkour-animation">
+            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&q=80&w=200&h=200"
+                alt="Silhouette" class="silhouette-boy" style="display: none;">
+            <!-- Using CSS polygon for actual silhouette to avoid external dependency issues if user is offline, but keeping structural intent -->
+            <div class="shadow-runner"></div>
+        </div>
+
+        <div class="scroll-down">Scroll Down</div>
+    </section>
+
+    <!-- Main Content Background Gradient Context -->
+    <div class="story-depth">
+
+        <!-- Intro & Synopsis -->
+        <section class="section-container reveal">
+            <div class="glass-icon-divider"></div>
+            <h2 class="section-heading font-mincho">あらすじ</h2>
+            <div class="content-text">
+                <p>
+                    高校2年生の夏。終業式の朝、菱川花火はビルの上をパルクールで駆け抜ける黒髪の少年を目撃する。<br><br>
+                    偶然の再会。彼が追っていたのは、触れただけでこの世界から存在が消去されてしまう「青く光る蝶」。<br>
+                    寂しげな背中を放っておけず手伝うことになった花火は、やがて衝撃の事実を知る。<br><br>
+                    ここは、死後の人間が辿り着く「裏の世界」。<br>
+                    そして少年・サクラは、生まれてくる妹に会うため、生きたままこちらへ迷い込んでしまった「表の人間」であった。
+                </p>
+            </div>
+        </section>
+
+        <!-- Characters -->
+        <section class="section-container reveal">
+            <div class="glass-icon-divider"></div>
+            <h2 class="section-heading font-mincho">登場人物</h2>
+
+            <div class="char-wrap">
+                <div class="char-box">
+                    <h3 class="char-name font-mincho">菱川 花火 <span class="yomi">Hanabi Hishikawa</span></h3>
+                    <p class="char-desc">好奇心旺盛な高校2年生。「今年の夏は遊び尽くす」と決めていたが、サクラに出会い、彼の蝶探しを手伝うことになる。</p>
+                </div>
+
+                <div class="char-box">
+                    <h3 class="char-name font-mincho">桃山 桜 <span class="yomi">Sakura Momoyama</span></h3>
+                    <p class="char-desc">どこか影のあるパルクール少年。生きたまま死後の世界に迷い込み、元の世界へ帰るために光の欠片を集めている。</p>
+                </div>
+
+                <div class="char-box">
+                    <h3 class="char-name font-mincho">内川 和葉 <span class="yomi">Kazuha Uchikawa</span></h3>
+                    <p class="char-desc">花火の親友。恋バナが好きで、花火を海へ誘う活発な少女。</p>
+                </div>
+
+                <div class="char-box">
+                    <h3 class="char-name font-mincho">ヒナタ / ヨシノ <span class="yomi">Hinata / Yoshino</span></h3>
+                    <p class="char-desc">かつてサクラを庇ってゲートに散った叔母と、蝶に触れたことで世界から忘れ去られた存在。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion / Outro -->
+        <section class="section-container reveal" style="padding-bottom: 150px;">
+            <div class="glass-icon-divider"></div>
+            <div class="content-text center-text">
+                <p class="outro-text font-mincho">
+                    夏の眩しさと、記憶が消えてしまう儚さ。<br>
+                    交わるはずのなかった二人が過ごした、<br>
+                    青くて深く、静かな夏の物語。
+                </p>
+            </div>
+        </section>
+
+    </div> <!-- End Story Depth -->
+
+    <!-- Footer -->
+    <footer class="summer-footer">
+        &copy; 2026 裏の夏、君と追う / Author: @h-ar-u
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            // Scroll Reveal Text
+            function checkScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const revealPoint = 100;
+
+                reveals.forEach(reveal => {
+                    const revealTop = reveal.getBoundingClientRect().top;
+                    if (revealTop < windowHeight - revealPoint) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        })();
+    </script>
+</body>
+
+</html>

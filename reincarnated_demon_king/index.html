@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元魔王、勇者の息子に転生 〜暗殺を試みるが、父が強すぎる〜</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@500;800&family=Yusei+Magic&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="comedy-header">
+        <a href="../index.html" class="nav-return">◀ ポータルへ</a>
+    </header>
+
+    <div class="split-container">
+
+        <!-- Left/Top: Demon King's Ambition (Dark & Edgy) -->
+        <section class="split-side demon-side">
+            <div class="dark-overlay"></div>
+            <div class="content">
+                <h1 class="side-title font-dela">
+                    元魔王、<br>
+                    <span class="small-text">勇者の息子に</span>転生
+                </h1>
+                <div class="speech-bubble dark-bubble font-yusei">
+                    「フフフ…致死性の毒キノコだ。今日こそあの忌々しい勇者（おやじ）を自重で潰してやる…！」
+                </div>
+
+                <div class="char-info">
+                    <h2 class="char-name">グラット (10歳)</h2>
+                    <p>その正体は、12年前に勇者に討たれた『元魔王』。<br>前世の記憶を取り戻し、憎き勇者への復讐（暗殺）を企てている。可愛い子供のフリをするのに限界を感じている。</p>
+                </div>
+            </div>
+
+            <!-- Floating poison mushrooms -->
+            <div class="floating-icon icon-mushroom" style="top: 20%; left: 10%;">🍄</div>
+            <div class="floating-icon icon-mushroom" style="bottom: 30%; right: 15%;">🍄</div>
+        </section>
+
+        <!-- The "VS" Divider -->
+        <div class="vs-divider font-dela">VS</div>
+
+        <!-- Right/Bottom: Hero Dad's Farming Life (Bright & Warm) -->
+        <section class="split-side hero-side">
+            <div class="light-overlay"></div>
+            <div class="content">
+                <h1 class="side-title font-mplus">
+                    〜暗殺を試みるが、<br>
+                    <span class="highlight-orange">父が強すぎる〜</span>
+                </h1>
+                <div class="speech-bubble light-bubble font-mplus">
+                    「おお、グラット！今日のスープはキノコのコクが出てて美味いぞ！おかわり！」
+                </div>
+
+                <div class="char-info">
+                    <h2 class="char-name">レイン (父)</h2>
+                    <p>かつて魔王を討ち取った『元勇者』。<br>現在は討伐の報奨金で一生暮らせるため、趣味の畑仕事をして余生を過ごしている。グラットを溺愛する親バカ。<br>
+                        <span class="cheat-skill">チートスキル『天賜』：あらゆる病気・毒・呪いを完全無効化する。</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Floating happy farm things -->
+            <div class="floating-icon icon-farm" style="top: 15%; right: 20%;">🥕</div>
+            <div class="floating-icon icon-farm" style="bottom: 25%; left: 10%;">🍲</div>
+        </section>
+
+    </div> <!-- End Split Container -->
+
+    <!-- Synopsis Footer Area -->
+    <section class="synopsis-area">
+        <div class="synopsis-inner">
+            <h3 class="font-dela">あらすじ</h3>
+            <p class="font-mplus">
+                かつて魔族を率いて世界を支配しようとした魔王は、規格外の強さとカリスマ性を持つ勇者レインによって討ち取られた。<br>
+                それから12年後。魔王はなんと、憎き勇者レインの息子「グラット」として転生し、前世の記憶を取り戻す。<br><br>
+                グラットは復讐のため父親の暗殺を決意。森で致死性の紫色の毒キノコを採取し、父のスープにだけこっそり混入させることに成功する。<br>
+                完全犯罪を確信し、ほくそ笑みながら見守るグラットだったが、父は平然と「野菜のコクが出てる」と完食してしまう。<br><br>
+                父レインは、あらゆる毒や呪いを無効化するスキル「天賜」の持ち主だったのだ。<br>
+                予想以上の「無理ゲー」っぷりに震えながらも、グラットは次なる完璧な暗殺計画を心に誓うのだった。
+            </p>
+        </div>
+        <footer class="comedy-footer font-mplus">
+            &copy; 2026 元魔王、勇者の息子に転生 / Author: @h-ar-u
+        </footer>
+    </section>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        // Simple pop-up text effect for comedy
+        setInterval(() => {
+            const popup = document.createElement('div');
+            popup.classList.add('pop-text', 'font-dela');
+
+            // Randomly choose text
+            const texts = ['毒無効!!', '無理ゲー!!', '美味しい!!', 'ノーダメージ!!'];
+            popup.innerText = texts[Math.floor(Math.random() * texts.length)];
+
+            // Randomly position on the hero side
+            const heroSide = document.querySelector('.hero-side');
+            const rect = heroSide.getBoundingClientRect();
+
+            // Generate coordinates constrained to hero side
+            let x = Math.random() * (rect.width - 150) + rect.left;
+            let y = Math.random() * (rect.height - 100) + rect.top + window.scrollY;
+
+            popup.style.left = `${x}px`;
+            popup.style.top = `${y}px`;
+
+            document.body.appendChild(popup);
+
+            // Remove after animation
+            setTimeout(() => {
+                popup.remove();
+            }, 1000);
+
+        }, 3000); // Popup every 3 seconds
+    </script>
+</body>
+
+</html>
