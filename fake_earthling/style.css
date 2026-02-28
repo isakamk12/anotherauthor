@@ -1,0 +1,333 @@
+/* ===== CSS Variables ===== */
+:root {
+    /* Cyber/Space Colors */
+    --space-dark: #0A0A0E;
+    --cyber-gray: #2A2A35;
+    --cyber-cyan: #00E5FF;
+    --cyber-red: #FF2A2A;
+
+    /* Nature/Earth Colors */
+    --earth-blue: #4A90E2;
+    --earth-sky: #87CEEB;
+    --earth-green: #50C878;
+    --warm-sun: #FFD700;
+}
+
+/* ===== Reset & Typography ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--space-dark);
+    color: #FFF;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.font-mincho {
+    font-family: 'Shippori Mincho', serif;
+}
+
+.font-zen {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Mouse Canvas */
+#mouse-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 99998;
+}
+
+/* ===== Header ===== */
+.lp-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.nav-return {
+    color: var(--cyber-cyan);
+    text-decoration: none;
+    font-family: 'Orbitron', 'sans-serif';
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-return:hover {
+    color: #FFF;
+    text-shadow: 0 0 10px var(--cyber-cyan);
+}
+
+.header-status {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+#env-status {
+    color: var(--cyber-cyan);
+    text-shadow: 0 0 5px var(--cyber-cyan);
+}
+
+/* ===== The Long Gradient Container ===== */
+/* This container smooths the transition from space to nature */
+.world-gradient-container {
+    /* 
+      Top: Absolute black/gray space
+      Middle: Transitioning through atmosphere
+      Bottom: Bright sky and green 
+    */
+    background: linear-gradient(to bottom,
+            var(--space-dark) 0%,
+            #0F1520 20%,
+            #1A2B4C 50%,
+            var(--earth-blue) 75%,
+            var(--earth-sky) 90%,
+            #A8E6CF 100%);
+    min-height: 400vh;
+    /* 4 sections */
+    position: relative;
+}
+
+/* Sections Setup */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 80px 20px;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== Section 1: Hero (Cyber Space) ===== */
+.cyber-grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-image:
+        linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.hero-labels {
+    margin-bottom: 30px;
+}
+
+.cyber-badge {
+    display: inline-block;
+    border: 1px solid var(--cyber-cyan);
+    color: var(--cyber-cyan);
+    padding: 5px 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    margin: 0 10px;
+    background: rgba(0, 229, 255, 0.1);
+}
+
+.main-title {
+    font-size: 4rem;
+    color: #FFF;
+    margin-bottom: 10px;
+    letter-spacing: 0.2em;
+}
+
+.sub-title {
+    color: var(--cyber-cyan);
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: -15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    animation: pulse 2s infinite;
+}
+
+/* ===== Section 2: Synopsis ===== */
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 0.1em;
+    color: #FFF;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.text-card {
+    background: rgba(15, 21, 32, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.text-card p {
+    font-size: 1.1rem;
+    line-height: 2.2;
+    color: #E0E0E0;
+}
+
+/* ===== Section 3: Characters ===== */
+.char-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.char-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.char-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-family: 'Shippori Mincho', serif;
+}
+
+.cyber-border {
+    border-left: 4px solid var(--cyber-cyan);
+}
+
+.nature-border {
+    border-left: 4px solid var(--earth-green);
+}
+
+.enemy-border {
+    border-left: 4px solid var(--cyber-red);
+}
+
+/* ===== Section 4: Conclusion (Nature) ===== */
+.nature-halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.quote-text {
+    font-size: 3.5rem;
+    color: #FFF;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 255, 255, 0.4);
+    margin-bottom: 60px;
+    line-height: 1.4;
+}
+
+.clear-card {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFF;
+}
+
+/* ===== Fade Animations ===== */
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* ===== Footer ===== */
+.lp-footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #A8E6CF;
+    /* Match bottom of gradient */
+    color: #2F604B;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .char-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .quote-text {
+        font-size: 2rem;
+    }
+
+    .text-card {
+        padding: 30px 20px;
+    }
+}

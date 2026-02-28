@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偽造地球人</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Shippori+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@300;500&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="lp-header" id="main-header">
+        <a href="../index.html" class="nav-return">▲ RETURN TO PORTAL</a>
+        <div class="header-status">
+            SYSTEM: <span id="env-status">INFILTRATION</span>
+        </div>
+    </header>
+
+    <!-- The Long Gradient Background Container -->
+    <div class="world-gradient-container">
+
+        <!-- Section 1: Cyber / Cold Space (Top) -->
+        <section class="section hero-section" id="section-hero">
+            <div class="cyber-grid-overlay"></div>
+            <div class="content-wrapper text-center">
+                <div class="hero-labels">
+                    <span class="cyber-badge">TARGET: EARTH</span>
+                    <span class="cyber-badge">MISSION: INFILTRATION</span>
+                </div>
+
+                <h1 class="main-title font-orbitron glitch" data-text="偽造地球人">
+                    <span class="kanji-title font-mincho">偽造地球人</span>
+                </h1>
+                <p class="sub-title font-orbitron">- 紛い者の潜入録 -</p>
+
+                <div class="scroll-indicator">
+                    <p class="font-orbitron">Bypass Security<br>V</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Transition & Synopsis (Middle) -->
+        <section class="section synopsis-section" id="section-synopsis">
+            <div class="content-wrapper">
+                <h2 class="section-title font-mincho">知識は何のためにあるのか</h2>
+
+                <div class="text-card fade-up">
+                    <p class="font-zen">
+                        ある星の聡明な宇宙人が、地球侵略を企む王の命令により、スパイとして地球に送り込まれた。<br>
+                        彼は地球人そっくりの肉体を与えられ、持ち前の頭脳と能力で地球の知識や技術を吸収していく。<br><br>
+                        やがて彼は優秀な研究者としてノーベル賞を受賞し、地球の最先端技術や国家機密に関わるようになる。<br>
+                        潜入から50年後、ついに祖星から帰還命令が下る。しかし、地球の美しい自然や、妻や娘との生活、同僚たちとの記憶が彼の脳裏をよぎった。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Characters (Warming Up) -->
+        <section class="section character-section" id="section-character">
+            <div class="content-wrapper">
+                <h2 class="section-title font-mincho" style="text-align: center; color: #FFF;">ENTITIES</h2>
+
+                <div class="char-grid">
+                    <!-- Protagonist -->
+                    <div class="char-card cyber-border fade-up">
+                        <h3 class="char-name">彼（主人公）</h3>
+                        <p class="char-desc font-zen">
+                            地球の全科学やネットワークを把握し、史上最年少でノーベル賞を受賞する優秀な研究者となる。冷徹なスパイだったが、50年の歳月が彼に「人間の心」を与えた。</p>
+                    </div>
+
+                    <!-- Daughter -->
+                    <div class="char-card nature-border fade-up" style="transition-delay: 0.1s;">
+                        <h3 class="char-name">アンナ</h3>
+                        <p class="char-desc font-zen">主人公と地球人の妻の間に生まれた娘。主人公の背中を見て育ち、「誰かの役に立つ研究がしたい」と同じ研究者の道を歩んでいる。</p>
+                    </div>
+
+                    <!-- Wife -->
+                    <div class="char-card nature-border fade-up" style="transition-delay: 0.2s;">
+                        <h3 class="char-name">妻</h3>
+                        <p class="char-desc font-zen">
+                            主人公の大学時代の元同級生。当初は主人公にとって「社会的地位を安定させるための偽装手段」だったが、やがて本物の愛情を持った円満な家庭を築く。</p>
+                    </div>
+
+                    <!-- King -->
+                    <div class="char-card enemy-border fade-up" style="transition-delay: 0.3s;">
+                        <h3 class="char-name">祖星の王</h3>
+                        <p class="char-desc font-zen">主人公にスパイ活動を命じた絶対権力者。帰還命令を無視した主人公に激怒し、地球へ破壊のための戦艦隊を送り込む。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Nature / Conclusion (Bottom) -->
+        <section class="section conclusion-section" id="section-conclusion">
+            <div class="content-wrapper text-center">
+                <div class="nature-halo"></div>
+
+                <h2 class="quote-text font-mincho fade-up">
+                    「自分の心に従っただけだ」
+                </h2>
+
+                <div class="text-card clear-card fade-up" style="transition-delay: 0.2s;">
+                    <p class="font-zen">
+                        祖星からの戦艦隊は、彼自身が開発に協力した地球の防衛システムによって全滅させられた。<br>
+                        星の終末を防ぎ、地球を救う英雄となった彼は、娘の問いにそう答え、青々とした空を見上げる。<br><br>
+                        偽りから始まった50年は、確かに本物の光を見つけていた。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="lp-footer">
+        &copy; 2026 偽造地球人 / Author: @015077
+    </footer>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        (function () {
+            // Scroll fade-up reveals
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Header status update based on scroll position
+            const headerStatus = document.getElementById('env-status');
+            const sections = document.querySelectorAll('.section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 300) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                if (current === 'section-hero') headerStatus.innerText = 'INFILTRATION';
+                else if (current === 'section-synopsis') headerStatus.innerText = 'ASSIMILATION';
+                else if (current === 'section-character') headerStatus.innerText = 'BONDING';
+                else if (current === 'section-conclusion') headerStatus.innerText = 'EARTHLING';
+            });
+        })();
+    </script>
+</body>
+
+</html>

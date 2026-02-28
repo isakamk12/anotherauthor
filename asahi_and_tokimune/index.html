@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あさひと時宗</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Yuji+Syuku&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas (Mist & Blood/Petals) -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="wafu-header">
+        <a href="../index.html" class="nav-return font-mincho">戻る</a>
+        <div class="header-stamp font-yuji">特設</div>
+    </header>
+
+    <!-- Main Split Layout -->
+    <div class="split-container">
+
+        <!-- Left Side: Tokimune (Dynamic/Blood/Effort) -->
+        <section class="split-side toki-side">
+            <div class="blood-splatter-overlay"></div>
+
+            <div class="content-box">
+                <h2 class="char-name font-yuji">如月 時宗<span class="yomi">Kisaragi Tokimune</span></h2>
+
+                <div class="char-desc font-mincho">
+                    <p>「俺には才能がない。だからこそ、血を吐くほどに足掻くしかないんだ」</p>
+                    <hr class="wafu-line">
+                    <p class="detail">
+                        如月家の次期当主を目指し、妖を斬る妖刀『奏』を継ぐために身を削る12歳。漆黒の髪、黒の着流しに藍色の帯。実の兄を殺して生き残った過去を背負い、才能なき自身を呪いながらも、美しく洗練された太刀筋で修羅の道を往く。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Side: Asahi (Static/Mist/Genius) -->
+        <section class="split-side asahi-side">
+            <div class="mist-overlay"></div>
+
+            <div class="content-box content-right">
+                <h2 class="char-name font-yuji">あさひ<span class="yomi">Asahi</span></h2>
+
+                <div class="char-desc font-mincho">
+                    <p>「戦うのも、血を浴びるのも疲れた。俺はただ、白い布団で二度寝させてほしい」</p>
+                    <hr class="wafu-line">
+                    <p class="detail">
+                        時宗のいとこであり、同じく12歳。人の形に近い妖に産ませた半妖。青い着物に黒の鮫柄、紺色の袴。女形のような美しい顔立ちと、妖由来の圧倒的な戦闘センスを持つが、極度の怠け者。家の因習に嫌気がさしている。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Center Title & Separator -->
+        <div class="center-title-container">
+            <div class="diagonal-slash"></div>
+            <h1 class="main-title font-mincho">
+                <span class="title-asahi">あさひ</span>と<span class="title-toki">時宗</span>
+            </h1>
+        </div>
+
+    </div> <!-- End Split Container -->
+
+    <!-- Synopsis Footer Area -->
+    <section class="synopsis-area">
+        <div class="synopsis-inner">
+            <h3 class="font-yuji section-heading">物語のあらまし</h3>
+            <p class="font-mincho leading-relaxed">
+                代々妖退治を生業とする如月家。<br>
+                一族の中で最も強い者が妖刀『奏』を継ぐという血塗られた掟の下、相反する二人の少年がいた。<br><br>
+                真面目で努力家だが己の才能に絶望する「時宗」と、半妖ゆえに圧倒的な力を持ちながらも戦うことを嫌悪する「あさひ」。<br>
+                村や町を脅かす妖の退治に赴きながら、二人は己の血筋、凄惨な過去、そして「強さ」の意味と向き合っていく。<br><br>
+                彼らの視点が交錯する中で描かれる、羨望と拒絶、静と動のダーク和風ファンタジー。
+            </p>
+        </div>
+
+        <footer class="wafu-footer font-mincho">
+            &copy; 2026 あさひと時宗 / Author: 桜井もみじ☆
+        </footer>
+    </section>
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+    <script>
+        // Simple entrance animation on load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+
+</html>
