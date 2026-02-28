@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空に在る -マガツジュゴンノミヤの封印-</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Creepster&family=Noto+Serif+JP:wght@400;700;900&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mouse Canvas -->
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="sky-header">
+        <a href="../index.html" class="nav-return">▶ 離れる</a>
+    </header>
+
+    <!-- Background Parallax Layers -->
+    <div class="parallax-wrapper">
+
+        <!-- The Sky (Moves SLOWER than scroll) -->
+        <div class="bg-layer sky-layer">
+            <h1 class="main-title font-mincho">空<br>に<br>在<br>る</h1>
+            <div class="skull-cloud">
+                <!-- CSS Skull Representation -->
+            </div>
+            <p class="subtitle font-mincho">見上げてはいけない空がある</p>
+        </div>
+
+        <!-- The Forest (Moves normal speed) -->
+        <div class="bg-layer forest-layer"></div>
+
+        <!-- Foreground Content (Moves normal speed) -->
+        <div class="content-layer">
+
+            <!-- Synopsis / The Descent -->
+            <section class="section descent-intro">
+                <div class="content-box">
+                    <h2 class="section-title font-mincho">マガツジュゴンノミヤ</h2>
+                    <p class="font-zen leading-relaxed">
+                        N市周辺で発生した凄惨な連続変死事件。<br>
+                        外傷が全くないにもかかわらず「全身の骨が粉砕され、骨髄が消失している」遺体。<br>
+                        いずれの顔にも、生きながら地獄を見たかのような恐怖の表情が浮かんでいた。<br><br>
+                        立ち入り禁止の山奥にある神社跡「渦津呪言宮（マガツジュゴンノミヤ）」。<br>
+                        3ヶ月前、動画配信者が破壊した御神体によって、全ての災いを統べる怪異が解き放たれた。
+                    </p>
+                </div>
+            </section>
+
+            <!-- The Characters -->
+            <section class="section characters-section">
+                <div class="content-box">
+                    <h2 class="section-title font-mincho">封印に向かう者たち</h2>
+
+                    <ul class="char-list">
+                        <li class="char-item">
+                            <h3 class="char-name">真島 祐介 <span class="char-age">43歳・警部</span></h3>
+                            <p class="char-desc">土佐弁のような方言を話し、サイダー味のロリポップを愛用する現場主義の刑事。オカルトを信じていなかったが、怪異に直面し考えを改める。</p>
+                        </li>
+                        <li class="char-item">
+                            <h3 class="char-name">片桐 一 <span class="char-age">27歳・警部補</span></h3>
+                            <p class="char-desc">真島の部下。怪異事件に翻弄されながらも捜査を進める若い刑事。</p>
+                        </li>
+                        <li class="char-item">
+                            <h3 class="char-name">鬼頭 月野 <span class="char-age">33歳・陰陽師</span></h3>
+                            <p class="char-desc">黒いスーツにサングラス姿の謎めいた存在。怪異の封印を主導する。</p>
+                        </li>
+                        <li class="char-item">
+                            <h3 class="char-name">真島 奏 <span class="char-age">30歳・作家</span></h3>
+                            <p class="char-desc">真島の従妹で、京都弁を話す。大型特殊免許を持っており、クレーン車で1トンの鉛の蓋を操る。</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- The Deep Pit / Bottom -->
+            <section class="section deep-pit">
+                <div class="pit-overlay"></div>
+                <div class="content-box text-center">
+                    <p class="warning-text font-mincho pulse-glow">
+                        縦穴の底へ
+                    </p>
+                    <p class="font-zen" style="color: #666;">特注の「1トンの鉛の蓋」を武器に、呪いに満ちた底へと降りていく。</p>
+                </div>
+            </section>
+
+            <!-- Footer: The Lead Lid -->
+            <footer class="lead-lid-footer">
+                <div class="lid-texture"></div>
+                <div class="footer-content font-mincho">
+                    &copy; 2026 空に在る / Author: ナベッチ
+                </div>
+            </footer>
+
+        </div> <!-- End Content Layer -->
+
+    </div> <!-- End Parallax Wrapper -->
+
+    <!-- Scripts -->
+    <script src="mouse-trail.js"></script>
+</body>
+
+</html>
