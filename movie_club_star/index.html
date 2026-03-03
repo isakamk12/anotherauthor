@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>映画部の私が芸能界に入ったら、実力より話題性が求められました 特設サイト</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="mouse-trail-canvas"></canvas>
+
+    <!-- Camera Viewfinder UI Elements (Fixed) -->
+    <div class="viewfinder-ui">
+        <div class="vf-corner vf-tl"></div>
+        <div class="vf-corner vf-tr"></div>
+        <div class="vf-corner vf-bl"></div>
+        <div class="vf-corner vf-br"></div>
+        <div class="vf-center-cross"></div>
+        <div class="vf-record-dot">REC</div>
+        <div class="vf-time">00:00:00:00</div>
+    </div>
+
+    <!-- White Flash Overlay -->
+    <div class="flash-overlay"></div>
+
+    <header class="movie-header">
+        <a href="../index.html" class="back-nav font-sans">＜ RETURN</a>
+    </header>
+
+    <main class="story-container">
+        
+        <!-- Hero Section: Sunset Rooftop Silhouette -->
+        <section class="section hero-section">
+            <div class="sunset-bg"></div>
+            <div class="silhouette-layer">
+                <!-- Five figures standing together -->
+                <div class="figure fig-1"></div>
+                <div class="figure fig-2"></div>
+                <div class="figure fig-3 main-fig"></div> <!-- Shino -->
+                <div class="figure fig-4"></div>
+                <div class="figure fig-5"></div>
+            </div>
+            
+            <div class="hero-text-block">
+                <p class="episode-title font-mincho fade-up">第0話 エピソードタイトル：テイクゼロの夏</p>
+                <h1 class="main-title font-mincho fade-up" style="transition-delay: 0.2s;">
+                    映画部の私が<br>
+                    芸能界に入ったら、<br>
+                    実力より話題性が求められました
+                </h1>
+                <p class="theme-copy font-mincho fade-up" style="transition-delay: 0.4s;">
+                    全員が主役になるための、同じ高さの青春。
+                </p>
+            </div>
+        </section>
+
+        <!-- SNS Timeline / The "Distance" Section -->
+        <section class="section sns-section">
+            <!-- Simulated floating SNS comments -->
+            <div class="sns-marquee marquee-left">
+                <span class="font-sans">西宮篠ちゃん可愛すぎ！絶対売れる！ // 周りの部員モブじゃんｗ // 審査員特別賞って実質グランプリでしょ // 主演以外いらない説 // </span>
+                <span class="font-sans">西宮篠ちゃん可愛すぎ！絶対売れる！ // 周りの部員モブじゃんｗ // 審査員特別賞って実質グランプリでしょ // 主演以外いらない説 // </span>
+            </div>
+            
+            <div class="content-box">
+                <h2 class="section-title font-mincho reveal">世間の虚像と、私たちの実像</h2>
+                <div class="text-block font-mincho reveal">
+                    <p>常磐東高校映画部の西宮篠は、1年生の時に総文祭で審査員特別賞を受賞し、一躍時の人となる。</p>
+                    <p>2年生になり部長に就任すると、部員全員で雑誌の特集を組まれSNSで大バズりする。<br>
+                    しかし、世間の熱狂的な視線は「主演・西宮篠」にのみ集中し、彼女と部員たちの間には、見えない残酷な距離が生まれてしまった。</p>
+                    <p>一人だけが持てはやされることに葛藤を抱く彼女は、ただ、皆と同じ高さで映画を作りたかった。</p>
+                </div>
+            </div>
+
+            <div class="sns-marquee marquee-right">
+                <span class="font-sans">才能の違いが残酷 // やっぱり顔がいい奴が勝つんだな // 他の部員可哀想… // スキャンダル出ないかな // 女優デビュー待ったなし // </span>
+                <span class="font-sans">才能の違いが残酷 // やっぱり顔がいい奴が勝つんだな // 他の部員可哀想… // スキャンダル出ないかな // 女優デビュー待ったなし // </span>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section class="section character-section">
+            <div class="content-box">
+                <h2 class="section-title font-mincho reveal">CAST</h2>
+                
+                <div class="char-wrap">
+                    <div class="char-block reveal">
+                        <div class="char-header">
+                            <h3 class="char-name font-mincho">西宮 篠 <span class="char-yomi font-sans">Shino Nishimiya</span></h3>
+                            <span class="char-role font-sans">常磐東高校映画部 2年 / 部長 / 監督・主演</span>
+                        </div>
+                        <p class="char-p font-mincho">本作の主人公。圧倒的な演技力と美貌で世間から「別格」と注目を集める。特別視されることに苦悩し、映画部の仲間たちと「同じ高さ」で並ぶことを強く望んでいる。</p>
+                    </div>
+
+                    <div class="char-block reveal delay-1">
+                        <div class="char-header">
+                            <h3 class="char-name font-mincho">清水 真帆 <span class="char-yomi font-sans">Maho Shimizu</span></h3>
+                            <span class="char-role font-sans">常磐東高校映画部 2年 / 副部長</span>
+                        </div>
+                        <p class="char-p font-mincho">愛称は「まほ」。プレッシャーに晒される篠を一番近くで気遣い、支える良き理解者。世間と篠の間のギャップに真っ直ぐ向き合う。</p>
+                    </div>
+
+                    <div class="char-block reveal delay-2">
+                        <div class="char-header">
+                            <h3 class="char-name font-mincho">映画部の仲間たち</h3>
+                        </div>
+                        <p class="char-p font-mincho">脚本、カメラ、編集など裏方を支える部員たち。最初は特別視される篠との間に距離を感じていたが、共に群像劇を制作する中で本当のチームへ成長していく。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resolution Section -->
+        <section class="section resolution-section">
+            <div class="content-box text-center">
+                <div class="flash-trigger-box reveal">
+                    <p class="quote font-mincho">「映画部を辞めず、プロになっても部員と一緒に作品を作る」</p>
+                </div>
+                
+                <div class="text-block font-mincho reveal delay-1" style="margin-top: 40px;">
+                    <p>あえて主演を置かない「全員が主演の群像劇」。<br>
+                    全国高校映画コンテストでのグランプリ・脚本賞・編集賞の三冠達成。</p>
+                    <p>プロの芸能界という圧倒的な話題性と光の海に飲まれそうになりながらも、<br>
+                    彼女は仲間と共に歩み続ける道を選んだ。</p>
+                </div>
+                
+                <a href="https://kakuyomu.jp/" target="_blank" class="read-btn font-sans reveal delay-2">STORY START</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="movie-footer font-sans">
+        &copy; 2026 綾瀬ヨル
+    </footer>
+
+    <script src="mouse-trail.js"></script>
+    <script>
+        // Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up, .reveal').forEach(el => observer.observe(el));
+
+        // Timecode update
+        const timeEl = document.querySelector('.vf-time');
+        setInterval(() => {
+            const d = new Date();
+            const h = String(d.getHours()).padStart(2, '0');
+            const m = String(d.getMinutes()).padStart(2, '0');
+            const s = String(d.getSeconds()).padStart(2, '0');
+            const ms = String(Math.floor(d.getMilliseconds() / 10)).padStart(2, '0');
+            timeEl.textContent = `${h}:${m}:${s}:${ms}`;
+        }, 50);
+
+        // Flash Effect on Scroll past a certain point
+        const flashOverlay = document.querySelector('.flash-overlay');
+        let flashed = false;
+        
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > window.innerHeight * 0.8 && window.scrollY < window.innerHeight * 1.5) {
+                if(!flashed && Math.random() > 0.95) { // Random chance to flash when in the SNS zone
+                    flash();
+                }
+            }
+        });
+
+        function flash() {
+            flashed = true;
+            flashOverlay.style.opacity = '1';
+            setTimeout(() => {
+                flashOverlay.style.opacity = '0';
+                setTimeout(() => { flashed = false; }, 1000); // Cooldown
+            }, 100);
+        }
+    </script>
+</body>
+</html>
